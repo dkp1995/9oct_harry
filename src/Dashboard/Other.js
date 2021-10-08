@@ -4,9 +4,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-import Deliverylist from './Home_compo/Deliverylist';
-import Entryform from './Home_compo/Entryform';
-import Addnewcustomer from './Customer_compo/Addnewcustomer';
+import Setautostatus from './Other_compo/Setautostatus';
+import Logout from './Other_compo/Logout';
 
 const useStyle = makeStyles((theme)=>({
 
@@ -39,7 +38,7 @@ const useStyle = makeStyles((theme)=>({
       
 }))
 
-const Customer = () => {
+const Other = () => {
 
     const classes = useStyle();
 
@@ -53,31 +52,34 @@ const Customer = () => {
     return (
         <div className={classes.content}>
             <div className={classes.toolbar} />
+
             <Box className={classes.box}>
+
                 <Tabs
                     value={selectedTab}
                     onChange={handleChange}
                     variant="scrollable"
-                    scrollButtons="auto"
-                    aria-label="scrollable auto tabs example"
-                >
-                    <Tab label="Customer list" />
-                    <Tab label="Add New customer" />
-                    <Tab label="Payment management" />
+                    scrollButtons="auto">
+
+
+                        <Tab label="Set Auto Count" />
+                        <Tab label="Logout" />
+                     
                 
 
                 </Tabs>
 
             </Box>
 
-            {selectedTab === 0 && <Deliverylist/>}
-            {selectedTab === 1    && <Addnewcustomer/>}
-            {selectedTab === 2    && <Entryform/>}
+            {selectedTab === 0 && <Setautostatus/>}
+            {selectedTab === 1 && <Logout/>}
+        
+
+           
+
             
-
-
-        </div>    
+        </div>
     )
 }
 
-export default Customer
+export default Other

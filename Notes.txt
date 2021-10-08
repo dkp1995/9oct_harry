@@ -1,0 +1,64 @@
+Customer data 
+
+        customer id 
+        customer name 
+        phone number 
+        disposal rate 
+        camper rate
+        address
+        deposit 
+        area 
+        advance 
+        pending 
+        camper hold 
+        disposal hold
+
+
+Daily entry 
+
+        customer id 
+        number of camper
+        number of disposal
+        payment received 
+        pending received 
+        pending created 
+        advance received
+        advance created 
+        disposal returned 
+        camper returned 
+        camper hold 
+        disposal hold
+        timestamp 
+        entry by which user
+
+form delivery request 
+
+        customer name 
+        no of camper 
+        no of disposal 
+        phone number
+        address
+        date 
+        time 
+
+auto count
+
+        number of camper 
+        number of disposal 
+
+
+
+
+
+
+manifest file 
+{
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }

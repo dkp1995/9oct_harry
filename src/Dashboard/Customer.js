@@ -4,7 +4,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-import Deliverylist from './Home_compo/Deliverylist';
+import Customerlist from './Customer_compo/Customerlist';
+import Entryform from './Home_compo/Entryform';
+import Addnewcustomer from './Customer_compo/Addnewcustomer';
 
 const useStyle = makeStyles((theme)=>({
 
@@ -37,15 +39,14 @@ const useStyle = makeStyles((theme)=>({
       
 }))
 
-
-const Report = () => {
+const Customer = () => {
 
     const classes = useStyle();
 
     const [selectedTab, setSelectedTab] = React.useState(0);
 
     const handleChange = (event, newValue) => {
-      setSelectedTab(newValue);
+        setSelectedTab(newValue);
     };
 
 
@@ -60,25 +61,23 @@ const Report = () => {
                     scrollButtons="auto"
                     aria-label="scrollable auto tabs example"
                 >
-                    <Tab label="Today's Report" />
-                    <Tab label="Weekly Report" />
-                    <Tab label="Monthly Report" />
-                    <Tab label="Yearly Report" />
+                    <Tab label="Customer list" />
+                    <Tab label="Add New customer" />
+                    <Tab label="Payment management" />
                 
 
                 </Tabs>
 
             </Box>
 
-            {selectedTab === 0 && <Deliverylist/>}
-            {selectedTab === 1    && <Deliverylist/>}
-            {selectedTab === 2    && <Deliverylist/>}
-            {selectedTab === 3    && <Deliverylist/>}
-
-
+            {selectedTab === 0 && <Customerlist/>}
+            {selectedTab === 1    && <Addnewcustomer/>}
+            {selectedTab === 2    && <Entryform/>}
             
-        </div>
+
+
+        </div>    
     )
 }
 
-export default Report
+export default Customer

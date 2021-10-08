@@ -40,7 +40,7 @@ const useStyle = makeStyles((theme)=>({
 }))
 
 
-const Home = () => {
+const AdminHome = () => {
 
     const classes = useStyle();
 
@@ -84,4 +84,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default AdminHome

@@ -11,14 +11,15 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
+import SettingsIcon from '@material-ui/icons/Settings';
+import PersonIcon from '@material-ui/icons/Person';
 import HomeIcon from '@material-ui/icons/Home';
-import TimelineIcon from '@material-ui/icons/Timeline';
+
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import '../Css/Navbar.css'
@@ -91,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
 
     const classes = useStyles();
-  const theme = useTheme();
+  //const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -135,7 +136,7 @@ const Navbar = () => {
                         </IconButton>
 
                         <Typography variant="h6" noWrap>
-                            Shri Hari Jal
+                            Dashboard 
                         </Typography>
 
                     </Toolbar>
@@ -173,22 +174,22 @@ const Navbar = () => {
                 <List>
                   
                     <ListItem>
-                        <ListItemIcon><Link to="/"><HomeIcon /></Link></ListItemIcon>
+                        <ListItemIcon><Link to="/admin"><HomeIcon color="primary"/></Link></ListItemIcon>
                         <ListItemText>Home</ListItemText>
                     </ListItem>
 
                     <ListItem>
-                        <ListItemIcon><Link to="/report"><AssessmentIcon /></Link></ListItemIcon>
+                        <ListItemIcon><Link to="/admin/report"><AssessmentIcon color="primary"/></Link></ListItemIcon>
                         <ListItemText>Report</ListItemText>
                     </ListItem>
 
                     <ListItem>
-                        <ListItemIcon><Link to="/customer"><AssignmentIndIcon /></Link></ListItemIcon>
+                        <ListItemIcon><Link to="/admin/customer"><PersonIcon color="primary"/></Link></ListItemIcon>
                         <ListItemText>Customer</ListItemText>
                     </ListItem>
                     
                     <ListItem>
-                        <ListItemIcon><Link to="/other"><AssignmentIndIcon /></Link></ListItemIcon>
+                        <ListItemIcon><Link to="/admin/other"><SettingsIcon color="primary"/></Link></ListItemIcon>
                         <ListItemText>Other</ListItemText>
                     </ListItem>
                     

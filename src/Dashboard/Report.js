@@ -4,7 +4,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-import Setautostatus from './Other_compo/Setautostatus';
+import DailyReport from './Report/DailyReport';
+import WeekReport from './Report/WeekReport';
+import MonthReport from './Report/MonthReport';
+import YearReport from './Report/YearReport';
+
+import moment from 'moment';
 
 const useStyle = makeStyles((theme)=>({
 
@@ -37,46 +42,52 @@ const useStyle = makeStyles((theme)=>({
       
 }))
 
-const Other = () => {
+
+const Report = () => {
 
     const classes = useStyle();
 
     const [selectedTab, setSelectedTab] = React.useState(0);
 
     const handleChange = (event, newValue) => {
-        setSelectedTab(newValue);
+      setSelectedTab(newValue);
     };
+
+
+    const today = moment().format("MMM Do YY")
+    const week = moment().startOf('week').fromNow();
 
 
     return (
         <div className={classes.content}>
             <div className={classes.toolbar} />
-
             <Box className={classes.box}>
-
                 <Tabs
                     value={selectedTab}
                     onChange={handleChange}
                     variant="scrollable"
-                    scrollButtons="auto">
-
-
-                        <Tab label="Set Auto Count" />
-                     
+                    scrollButtons="auto"
+                    aria-label="scrollable auto tabs example"
+                >
+                    <Tab label="Today's Report" />
+                    <Tab label="Weekly Report" />
+                    <Tab label="Monthly Report" />
+                    <Tab label="Yearly Report" />
                 
 
                 </Tabs>
 
             </Box>
 
-            {selectedTab === 0 && <Setautostatus/>}
-        
+            {selectedTab === 0 && <DailyReport />}
+            {selectedTab === 1    && <WeekReport />}
+            {selectedTab === 2    && <MonthReport />}
+            {selectedTab === 3    && <YearReport />}
 
-           
 
             
         </div>
     )
 }
 
-export default Other
+export default Report
